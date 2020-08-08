@@ -16,7 +16,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup-init.sh 
 
 # Cloning TLS-posion
 RUN git clone https://github.com/jmdx/TLS-poison.git \
-    && cd TLS-posion/client-hello-poisoning/custom-tls \
+    && cd TLS-poison/client-hello-poisoning/custom-tls \
     && cargo build
 
 # Exposing 8443 port
