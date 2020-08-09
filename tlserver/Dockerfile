@@ -14,4 +14,4 @@ WORKDIR /usr/src/app/client-hello-poisoning/custom-tls
 
 EXPOSE 8443
 
-CMD ["custom-tls", "--verbose", "--certs", "/app/rustls/test-ca/rsa/end.fullchain", "--key", "/app/rustls/test-ca/rsa/end.rsa", "-p", "8443", "http"]
+CMD ["custom-tls", "--verbose", "--certs", "/usr/src/app/rustls/test-ca/rsa/end.fullchain", "--key", "/usr/src/app/rustls/test-ca/rsa/end.rsa", "-p", "8443", "http"]
