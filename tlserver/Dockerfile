@@ -1,6 +1,6 @@
 FROM rust
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Install tlserver
 RUN apt-get update \
@@ -10,8 +10,8 @@ RUN apt-get update \
     && cargo build \
     && cargo install --path .
 
-WORKDIR /app/client-hello-poisoning/custom-tls
+WORKDIR /usr/src/app/client-hello-poisoning/custom-tls
 
 EXPOSE 8443
 
-CMD ["/usr/local/cargo/bin/custom-tls", "--verbose", "--certs", "/app/rustls/test-ca/rsa/end.fullchain", "--key", "/app/rustls/test-ca/rsa/end.rsa", "-p", "8443", "http"]
+CMD ["custom-tls", "--verbose", "--certs", "/app/rustls/test-ca/rsa/end.fullchain", "--key", "/app/rustls/test-ca/rsa/end.rsa", "-p", "8443", "http"]
