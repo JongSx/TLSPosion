@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 RUN apt-get update \
     && apt-get install git gcc -y \
     && git clone https://github.com/jmdx/TLS-poison.git . \
-    && cd TLS-poison/client-hello-poisoning/custom-tls \
+    && cd client-hello-poisoning/custom-tls \
     && cargo build \
     && cargo install --path .
 
